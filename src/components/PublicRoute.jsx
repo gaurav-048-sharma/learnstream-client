@@ -5,7 +5,7 @@ const PublicRoute = ({ children }) => {
 
   // If token exists, redirect to home
   if (token) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/login" replace />
   }
 
   return children

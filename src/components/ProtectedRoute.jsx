@@ -15,8 +15,8 @@ const ProtectedRoute = ({ children, requireInstructor = false }) => {
     return JSON.parse(jsonPayload).role
   }
 
-  if (requireInstructor && getUserRoleFromToken() !== 'instructor') {
-    return <Navigate to="/" replace />
+  if (requireInstructor && getUserRoleFromToken() !== 'seller') {
+    return <Navigate to="/dashbaord" replace />
   }
 
   return children

@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar' 
 import Login from './components/Auth/Login'
 import Signup from './components/Auth/Signup'
-import CourseList from './components/Course/CourseList'
-import InstructorDashboard from './components/Dashboard/InstructorDashboard'  // Add this
-import CourseDetail from './components/Course/CourseDetail'
+
+import Dashboard from './components/Dashboard/Dashboard'  // Add this
+
 import ProtectedRoute from './components/ProtectedRoute'  // Add this
 import PublicRoute from './components/PublicRoute'
 import './index.css'
@@ -16,7 +16,7 @@ function App() {
       <main className="flex-grow">
         <Routes>
           {/* Protected Routes */}
-          <Route
+          {/* <Route
             path="/"
             element={
               <ProtectedRoute>
@@ -31,12 +31,12 @@ function App() {
                 <CourseDetail />
               </ProtectedRoute>
             }
-          />
+          /> */}
           <Route
-            path="/instructor"
+            path="/dashboard"
             element={
               <ProtectedRoute requireInstructor={true}>
-                <InstructorDashboard />
+                <Dashboard />
               </ProtectedRoute>
             }
           />

@@ -27,8 +27,9 @@ const Navbar = () => {
     }
     return null
   }
+  console.log(getUserRoleFromToken)
 
-  const isInstructor = getUserRoleFromToken() === 'instructor'
+  const isInstructor = getUserRoleFromToken() === 'seller'
 
   return (
     <nav className="bg-white shadow-md p-4">
@@ -43,7 +44,7 @@ const Navbar = () => {
                 <Button variant="outline">Menu</Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem onClick={() => navigate('/')}>
+                <DropdownMenuItem onClick={() => navigate('/dashboard')}>
                   Home
                 </DropdownMenuItem>
                 {isInstructor && (
